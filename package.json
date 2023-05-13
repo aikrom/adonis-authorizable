@@ -1,0 +1,135 @@
+{
+  "name": "adonis-authorizable",
+  "version": "0.0.1",
+  "description": "Build a flexible authorization system in your Adonis application",
+  "keywords": [
+    "typescript",
+    "adonisjs",
+    "authorization"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "node --require=@adonisjs/require-ts/build/register bin/test.ts",
+    "test:cov": "c8 node --require=@adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile && npm run copyfiles",
+    "release": "np",
+    "version": "npm run build",
+    "commit": "git-cz",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@poppinss/manager": "^5.0.2",
+    "@poppinss/utils": "^4.0.4"
+  },
+  "devDependencies": {
+    "@adonisjs/core": "^5.8.5",
+    "@adonisjs/lucid": "^18.3.0",
+    "@adonisjs/require-ts": "^2.0.12",
+    "@adonisjs/sink": "^5.4.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@japa/assert": "^1.3.4",
+    "@japa/run-failed-tests": "^1.1.1",
+    "@japa/runner": "^2.0.9",
+    "@japa/spec-reporter": "^1.1.12",
+    "@poppinss/dev-utils": "^2.0.3",
+    "@poppinss/utils": "^5.0.0",
+    "@types/node": "^18.0.6",
+    "c8": "^7.13.0",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "execa": "^5",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "np": "^7.6.1",
+    "prettier": "^2.7.1",
+    "sqlite3": "^5.1.6",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^5.8.5",
+    "@adonisjs/lucid": "^18.3.0"
+  },
+  "main": "",
+  "files": [
+    "build/adonis-typings",
+    "build/providers",
+    "build/src"
+  ],
+  "types": "build/adonis-typings/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "adonisjs": {
+    "instructionsMd": "./build/instructions.md",
+    "preloads": [],
+    "templates": {},
+    "types": "adonis-authorizable",
+    "providers": [
+      "adonis-authorizable"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "np": {
+    "message": "chore(release): %s",
+    "tag": "latest",
+    "branch": "main",
+    "anyBranch": false
+  }
+}

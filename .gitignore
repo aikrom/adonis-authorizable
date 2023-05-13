@@ -1,0 +1,20 @@
+node_modules
+coverage
+.DS_STORE
+.nyc_output
+.idea
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.log
+build
+dist
+shrinkwrap.yaml
+tests/__app
+test-helpers/__app
+
+
+# Remove after configuration
+yarn.lock
+package-lock.json
+pnpm-lock.yaml

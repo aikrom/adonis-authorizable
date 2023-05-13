@@ -1,0 +1,11 @@
+build
+docs
+*.md
+config.json
+.eslintrc.json
+package.json
+*.html
+*.txt
+tmp
+test-helpers/__app
+tests/__app
