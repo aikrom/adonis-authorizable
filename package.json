@@ -1,6 +1,6 @@
 {
   "name": "adonis-authorizable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build a flexible authorization system in your Adonis application",
   "keywords": [
     "typescript",
